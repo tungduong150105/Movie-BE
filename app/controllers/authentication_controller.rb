@@ -10,7 +10,6 @@ class AuthenticationController < ApplicationController
       expires_at = JsonWebToken.decode(token)[:exp]
 
       render(json: {token:, expires_at:}, status: :ok)
-      # render(json: {message: "success"})
     else
       render(json: {error: "unauthorized"}, status: :unauthorized)
     end
